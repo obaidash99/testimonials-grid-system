@@ -1,0 +1,160 @@
+:root {
+	--moderate-violet: hsl(263, 55%, 52%);
+	--grayish-blue: hsl(217, 19%, 35%);
+	--blackish-blue: hsl(219, 29%, 14%);
+	--white: hsl(0, 0%, 100%);
+	--text-color: hsl(0, 2%, 74%);
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	background-color: hsl(213, 44%, 95%);
+}
+/* Start Global Components */
+h1,
+h2,
+p {
+	color: var(--white);
+}
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	position: relative;
+}
+.card .image {
+	margin-top: 5px;
+}
+.card .image img {
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+}
+.card .info {
+	margin-left: 10px;
+}
+.card .info h1 {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0px;
+}
+.card .info p {
+	font-size: 15px;
+	color: var(--text-color);
+}
+.text {
+	position: relative;
+}
+.text h2,
+.text p {
+	margin-top: 15px;
+}
+.text h2 {
+	font-weight: 500;
+	line-height: 1.2;
+}
+.text p {
+	color: var(--text-color);
+	font-weight: 400;
+	line-height: 1.2;
+}
+.container {
+	position: relative;
+	margin: 50px auto;
+	display: grid;
+	grid-template-areas:
+		'viol viol grayish big-white'
+		'sml-white dark dark big-white';
+	grid-template-columns: repeat(4, 280px);
+	grid-gap: 30px;
+	height: auto;
+	width: 1250px; /* it is 280*4=1120 of the width
+					plus gap*3 =90 
+	 				plus 40 for padding-top-and-bottom 
+					==>> 1120+90+40=1250 */
+	padding: 20px;
+}
+@media (max-width: 767px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+}
+@media (max-width: 1200px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+	}
+}
+.container > div {
+	padding: 25px 15px 25px 25px;
+	border-radius: 10px;
+	box-shadow: 5px 0px 20px #dedede;
+}
+/* End Global Components */
+/* Violet Card */
+.viol-quote {
+	grid-area: viol;
+	background-color: var(--moderate-violet);
+	position: relative;
+}
+.viol-quote::before {
+	content: '';
+	width: 104px;
+	height: 103px;
+	background-image: url(../images/bg-pattern-quotation.svg);
+	position: absolute;
+	right: 100px;
+	top: 10px;
+	transform: scale(1.2);
+}
+@media (max-width: 767px) {
+	.viol-quote::before {
+		right: 30px;
+		transform: scale(1);
+		top: 0;
+	}
+}
+.viol-quote img {
+	border: 2px solid hsl(262.9, 52%, 61.6%);
+}
+/* ## */
+/* Gray Card */
+.gray-quote {
+	grid-area: grayish;
+	background-color: var(--grayish-blue);
+}
+/* ## */
+/* Big White Card */
+.big-white-quote {
+	grid-area: big-white;
+	background-color: var(--white);
+	/* box-shadow: 5px 0px 20px #dedede; */
+}
+.big-white-quote .info h1,
+.big-white-quote .text h2 {
+	color: var(--grayish-blue);
+}
+/* ## */
+/* Dark Card */
+.dark-quote {
+	grid-area: dark;
+	background-color: var(--blackish-blue);
+}
+/* ## */
+/* Small White Card */
+.sml-white-quote {
+	grid-area: sml-white;
+	background-color: var(--white);
+	/* box-shadow: 5px 0px 20px #dedede; */
+}
+.sml-white-quote .info h1,
+.sml-white-quote .text h2 {
+	color: var(--grayish-blue);
+}
