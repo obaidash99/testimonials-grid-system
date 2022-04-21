@@ -147,6 +147,9 @@ p {
 	grid-area: dark;
 	background-color: var(--blackish-blue);
 }
+.dark-quote img {
+	border: 2px solid hsl(262.9, 52%, 61.6%);
+}
 /* ## */
 /* Small White Card */
 .sml-white-quote {
